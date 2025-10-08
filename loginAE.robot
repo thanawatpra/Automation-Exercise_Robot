@@ -4,6 +4,7 @@ Library         SeleniumLibrary
 ***Variables***
 ${URL}                      https://www.automationexercise.com
 ${BROWSER}                  Chrome
+${setName}                  test
 ${setEmail}                 testautomate123456789@gmail.com
 ${setPassword}              PassWord1234
 ${firstname}                test
@@ -13,6 +14,7 @@ ${state}                    test
 ${city}                     BKK
 ${zipcode}                  10000
 ${mobilenumber}             0958238756
+${Injection}                ' OR 1=1--
 
 ***Keywords***
 Signup Valid
@@ -22,7 +24,7 @@ Signup Valid
     Click Element       xpath=//a[text()=" Signup / Login"]
     Wait Until Element Is Visible       xpath=//input[@data-qa="signup-name"]     timeout=10s
     Wait Until Element Is Visible       xpath=//input[@data-qa="signup-email"]     timeout=10s
-    Input text      xpath=//input[@data-qa="signup-name"]       test
+    Input text      xpath=//input[@data-qa="signup-name"]       ${setName}
     Input text      xpath=//input[@data-qa="signup-email"]      ${setEmail}
     Click Element       xpath=//button[@data-qa="signup-button"]
     Wait Until Page Contains        Enter Account Information       timeout=10s
@@ -100,5 +102,5 @@ Login SQLInjection
     Wait Until Element Is Visible       xpath=//input[@data-qa="login-email"]     timeout=10s
     Wait Until Element Is Visible       xpath=//input[@data-qa="login-password"]     timeout=10s
     Input Text          xpath=//input[@data-qa="login-email"]           ${setEmail}
-    Input Text          xpath=//input[@data-qa="login-password"]        ' OR 1=1--
+    Input Text          xpath=//input[@data-qa="login-password"]        ${Injection}
     Click Element       xpath=//button[@data-qa="login-button"]

@@ -5,7 +5,7 @@ Library         SeleniumLibrary
 ${URL}                      https://www.automationexercise.com
 ${BROWSER}                  Chrome
 ${setName}                  test
-${setEmail}                 testautomate123456789@gmail.com
+${setEmail}                 teslaligabc@gmail.com
 ${setPassword}              PassWord1234
 ${firstname}                test
 ${lastname}                 automate
@@ -29,7 +29,7 @@ Signup Valid
     Click Element       xpath=//button[@data-qa="signup-button"]
     Wait Until Page Contains        Enter Account Information       timeout=10s
     Click Element       id=id_gender1
-    Input Text      id=password         ${password}
+    Input Text      id=password         ${setPassword}
     Click Element       id=days
     Select From List By Value       xpath=//select[@data-qa="days"]         15
     Select From List By Value       xpath=//select[@data-qa="months"]       3
@@ -76,6 +76,7 @@ Login Valid
     Input text      xpath=//input[@data-qa="login-email"]           ${setEmail}
     Input text      xpath=//input[@data-qa="login-password"]        ${setPassword}
     Click Element       xpath=//button[@data-qa="login-button"]
+    Wait Until Element Is Visible       xpath=//a[text()=" Logout"]     timeout=10s
 
 Login Invalid
     [Arguments]     ${Email}=     ${password}=

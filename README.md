@@ -3,6 +3,7 @@ TestCase Design : https://docs.google.com/spreadsheets/d/17toQRyZfNEpVQskQ_Cav2e
 
 
 วิธีการ Run test 
+
 หน้า Login : 
 1.cd Login // cd ไปยังโฟลเดอร์ Login ก่อน 
 2.robot login.robot // run robot เพื่อทำการทดสอบ
